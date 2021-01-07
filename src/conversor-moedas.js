@@ -7,9 +7,10 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import ListaMoedas from './lista-moedas';
-import FIXER_URL_TOKEN from './config';
+import getToken from './config';
 
 function ConversorMoedas() {
+  const FIXER_URL_TOKEN = getToken();
   const FIXER_URL = `http://data.fixer.io/api/latest?access_key=${FIXER_URL_TOKEN}&format=1`
   const [valor, setValor] = useState(1)
   const [moedaDe, setMoedaDe] = useState('USD')
